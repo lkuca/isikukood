@@ -4,6 +4,8 @@ while True:
     ikood=input("Sissesta isikukood:")
     if pikkus(ikood)==False:
         print("Liiga pikk või lühike isikukood")
+    elif not ikood.isdigit():
+        print("vaja ainult numbri sissestamine")
     else:
         print("11 sümbolid")
         s=sugu(ikood)
@@ -11,8 +13,6 @@ while True:
             print("Esimene täht ei ole õige")
         else:
             print(s)
-            if sunnipaev(ikood)=="viga":
-                print("2-7 tähed on valesti sissetatud")
-            else:
-                lause(ikood)
-                
+            sunnipaev(ikood)
+
+            lause(ikood)
