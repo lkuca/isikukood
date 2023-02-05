@@ -6,7 +6,7 @@ def pikkus(ikood:int)->bool:
      rtypr:bool
     """
     if len(ikood)==11:
-        flag=True 
+        flag=True
     else:
         flag=False 
     return flag
@@ -24,20 +24,19 @@ def sugu(ikood: str)->str:
     else:
         s="viga"
     return s
-def sunnipaev(ikood:str)->bool:
-    """kui teine ja seitsmes arv vastab sünnipäeva data
+def sunnipaev(ikood:str)->str:
+    """kui teine kuni seitsmes arv vastab sünnipäeva data
     param int ikood:isikukood sünnipäev
-    rtype:bool
+    rtype:str
     """
-    ikood_age=list(map(int,ikood))
-    if ikood_age[1] in [0,1,2,3,4,5,6,7,8,9] and ikood_age[2] in [0,1,2,3,4,5,6,7,8,9]:
-        t=2006
-    else:
-        t=False 
-    return t
+    aasta=ikood[1]+ikood[2]
+    kuu= ikood[3]+ikood[4]
+    paev=ikood[5]+ikood[6]
+
+    return paev+"." + kuu + "." + aasta
 def sunnikoht(ikood: str)->str:
     ikood_list=list(ikood)
-    tahed_8910=ikood_list[7]+ikood_list[8]+[9]
+    tahed_8910=ikood_list[7]+ikood_list[8]+ikood_list[9]
     t=int(tahed_8910)
     if 1<t<10:
         haigla="kuegogsoig b"
